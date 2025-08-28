@@ -1,0 +1,56 @@
+
+header {
+    grid-column: span 4 / span 4;
+    height: 130px;
+    width: 608px;
+    margin: 0px 0px 0px 40px;
+    padding: 0px;
+    border: 2px rgb(224, 224, 224) solid;
+    background-color: white;
+    font-size: xx-large;
+    display: flex;
+    justify-content: end;
+    text-align: center;
+}
+
+.funciones {
+    grid-column: span 4 / span 4;
+    grid-row-start: 2;
+    display: block;
+    margin: 0px 0px 0px 20px;
+    padding: 0px;
+}
+
+.numeros {
+    grid-column: span 3 / span 3;
+    grid-row-start: 3;
+    display: block;
+    justify-content: center;
+    margin: 0px 0px 0px 20px;
+    padding: 0px;
+}
+
+       
+button{
+    background-color: rgb(252, 252, 252);
+    color: rgb(99, 97, 97);
+    border: 1px rgb(240, 238, 238) solid;
+    width: 150px;
+    height: 100px;
+    font-size: xx-large;
+    cursor: pointer; 
+    margin: 0px;
+    padding: 0px;
+}
+button:hover{
+    background-color: gray;
+}
+.blanco{
+    background-color: white;
+    color: black;
+}
+.azul:hover{
+    background-color: rgb(45, 131, 211);
+    border: transparent;
+    color: white;
+    }
