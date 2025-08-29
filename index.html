@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="style.css">  
 </head>
 
-<body class="parent">
+<body>
     <header>
-        <h1 id="header"> </h1>
-        <script src="index.js"></script>
+        <div>
+            <h5 id="numeroArriba"> </h5>
+        </div>
+        <div>    
+            <h1 id ="numeroAbajo"> 0</h1>
+        </div>
+    
     </header>
 
     <nav class="funciones">
@@ -24,8 +29,7 @@
             <button onclick="mostrarNumero('CE')"> CE </button>
             <button onclick="mostrarNumero('C')"> C </button>
             <button onclick="mostrarNumero('»')"> » </button>
-            <button class="azul"
-                onclick="mostrarNumero('÷')"> ÷ </button>
+            <button class="azul"  onclick="mostrarNumero('÷')"> ÷ </button>
         </div>
     </nav>
 
@@ -47,16 +51,16 @@
             <button class="blanco"  onclick="mostrarNumero('1')"> 1 </button>
             <button class="blanco"  onclick="mostrarNumero('2')"> 2 </button>
             <button class="blanco"  onclick="mostrarNumero('3')"> 3 </button>
-            <button class="azul"  onclick="mostrarNumero('+')" > + </button>
+            <button class="azul"  onclick="sum('+')" > + </button>
         </div>
         <div class="numeros">
             <button onclick="mostrarNumero('±')"> ± </button>
             <button class="blanco"  onclick="mostrarNumero('0')" > 0 </button>
             <button onclick="mostrarNumero(',')"> , </button>
-            <button class="azul"
-                onclick="mostrarNumero('=')"> = </button>
+            <button class="azul"  onclick="igual('=')"> = </button>
         </div>
     </nav>
 
+    <script src="index.js"></script>
 </body>
 </html>
