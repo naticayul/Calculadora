@@ -15,11 +15,27 @@ function sum(numero){
     concatenar="" 
 }
 
+function exponencial(){
+    num1=concatenar;
+    concatenar**2;
+    document.getElementById("numeroArriba").textContent= concatenar+"²"
+    document.getElementById("numeroAbajo").textContent=concatenar**2
+}   
+
 function igual(){
     document.getElementById("numeroArriba").textContent= Number(num1)+"+"+concatenar
     concatenar=Number(concatenar)+Number(num1)
     document.getElementById("numeroAbajo").textContent=concatenar
 }
 
+function borrarTodo(){
+    document.getElementById("numeroArriba").textContent= ""
+    document.getElementById("numeroAbajo").textContent=0
+}
+
+function borrarAbajo(){
+    document.getElementById("numeroAbajo").textContent=0
+    concatenar=""
+}
 
 document.getElementById("texto").textContent="30"-Number("30")
