@@ -17,27 +17,32 @@ function operacion(modo){
 
 
 function igual(){
-    let resultado;
-    if(opCode=="+"){
-        resultado= Number(num1) + Number(concatenar)
+    document.getElementById("numeroArriba").textContent = num1 + opCode +concatenar;
+    switch(opCode){
+        case"+":
+            concatenar= Number(num1) + Number(concatenar)
+        break;
+        case"-":
+            concatenar= num1-concatenar
+        break;
+        case"/":
+            concatenar= dividir(num1, concatenar)
+        break;
+        case"*":
+            concatenar= num1*concatenar
+                // tambien podria hacerse... concatenar*=num1
+        break;
+        default:
+        break;
     }
-    if(opCode=="-"){
-        resultado= num1-concatenar
-    }
-    if(opCode=="*"){
-        resultado= num1*concatenar
-    }
-    if(opCode=="/"){
-        if(concatenar==0){
-            resultado="no se puede dividir por 0"
+    document.getElementById("numeroAbajo").textContent = concatenar
+}
+
+function dividir(num1,concatenar){
+    if(concatenar==0){
+        return "no se puede dividir por 0"
         }
-        else{
-        resultado= num1/concatenar
-        }
-    }
-    document.getElementById("numeroArriba").textContent =  Number(num1) + opCode +concatenar;
-    document.getElementById("numeroAbajo").textContent = resultado;
-    concatenar=resultado;
+    return num1/concatenar
 
 }
 
@@ -82,5 +87,14 @@ function borrarAbajo(){ //C//
     document.getElementById("numeroAbajo").textContent=0
     concatenar=""
 }
+function borrarUltimo(){ //»//
+    concatenar=concatenar.slice(0,-1)
+    document.getElementById("numeroAbajo").textContent=concatenar
+}
 
-
+function masMenos(){ //±//
+     if(concatenar=="-"){
+        return "-"+concatenar
+    }
+    return concatenar
+    }
