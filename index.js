@@ -67,15 +67,14 @@ function raizCuadrada(){
 function unoSobreX(){
     num1=concatenar;
     //  1/(concatenar);
-    
     if(concatenar==0){
         document.getElementById("numeroArriba").textContent= "1/"+"("+concatenar+")"
         document.getElementById("numeroAbajo").textContent="no se puede dividir por 0"
-        }
+    }
     else{
         document.getElementById("numeroArriba").textContent= "1/"+"("+concatenar+")"
         document.getElementById("numeroAbajo").textContent=1/+(concatenar)    
-        }
+    }
 } 
 
 function borrarTodo(){ //CE//
@@ -93,8 +92,13 @@ function borrarUltimo(){ //»//
 }
 
 function masMenos(){ //±//
-     if(concatenar=="-"){
-        return "-"+concatenar
+    if(concatenar>0){
+        concatenar= "-"+concatenar
+        document.getElementById("numeroAbajo").textContent=concatenar
     }
-    return concatenar
-    }
+    else{
+        concatenar= concatenar.slice(1)
+        document.getElementById("numeroAbajo").textContent=concatenar
+    } 
+}
+
