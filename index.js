@@ -3,24 +3,34 @@ let concatenar="";
 let num1="";
 let num2="";
 let opCode="";
+let resultado=false
 
 function mostrarNumero (numero){
+    if(resultado){
+        borrarTodo()
+        resultado=false
+    }
     concatenar+=numero;
     document.getElementById("numeroAbajo").textContent= concatenar
 }
 
  function operacion(modo){
     if(opCode==""){
-        num1=concatenar;
-        concatenar="";
+        guardarNumero()
+    } else if(concatenar!="") {
+        calculos()
+        guardarNumero()
     }
     opCode=modo;
     document.getElementById("numeroArriba").textContent=num1 + modo;
 }
 
+function guardarNumero(){
+    num1=concatenar;
+    concatenar="";
+}
 
-function igual(){
-    document.getElementById("numeroArriba").textContent = num1 + opCode +concatenar;
+function calculos(){
     switch(opCode){
         case"+":
             concatenar= Number(num1) + Number(concatenar)
@@ -39,6 +49,13 @@ function igual(){
         break;
     }
     document.getElementById("numeroAbajo").textContent = concatenar
+}
+
+function igual(){
+    document.getElementById("numeroArriba").textContent = num1 + opCode +concatenar +"=";
+    calculos()
+    document.getElementById("numeroAbajo").textContent = concatenar
+    guardarNumero();
 }
 
 function dividir(num1,concatenar){
@@ -80,7 +97,7 @@ function unoSobreX(){
 } 
 
 function borrarTodo(){ //CE//
-    document.getElementById("numeroArriba").textContent= ""
+    document.getElementById("numeroArriba").textContent= "0"
     document.getElementById("numeroAbajo").textContent=0
     concatenar=""
 }

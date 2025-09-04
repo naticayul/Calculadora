@@ -86,3 +86,26 @@ function operacion(modo){
         document.getElementById("numeroArriba").textContent=num1 + modo;
     }
 }
+
+////
+function igual(){
+    document.getElementById("numeroArriba").textContent = num1 + opCode +concatenar;
+    switch(opCode){
+        case"+":
+            concatenar= Number(num1) + Number(concatenar)
+        break;
+        case"-":
+            concatenar= num1-concatenar
+        break;
+        case"/":
+            concatenar= dividir(num1, concatenar)
+        break;
+        case"*":
+            concatenar= num1*concatenar
+                // tambien podria hacerse... concatenar*=num1
+        break;
+        default:
+        break;
+    }
+    document.getElementById("numeroAbajo").textContent = concatenar
+}
