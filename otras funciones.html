@@ -63,3 +63,26 @@ function igual(){
 
 }
  ///////////////
+
+
+function operacion(modo){
+    num1=concatenar;
+    concatenar="";
+    opCode=modo;
+    document.getElementById("numeroArriba").textContent= num1 + modo;
+}
+
+////////////////
+ function operacion(modo){
+ 
+    if(opCode==""){
+        num1=concatenar;
+        concatenar="";
+        opCode=modo;
+        document.getElementById("numeroArriba").textContent= num1 + modo;
+    }
+    else{
+        opCode=modo;
+        document.getElementById("numeroArriba").textContent=num1 + modo;
+    }
+}

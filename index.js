@@ -8,11 +8,14 @@ function mostrarNumero (numero){
     concatenar+=numero;
     document.getElementById("numeroAbajo").textContent= concatenar
 }
-function operacion(modo){
-    num1=concatenar;
-    concatenar="";
+
+ function operacion(modo){
+    if(opCode==""){
+        num1=concatenar;
+        concatenar="";
+    }
     opCode=modo;
-    document.getElementById("numeroArriba").textContent= num1 + modo;
+    document.getElementById("numeroArriba").textContent=num1 + modo;
 }
 
 
@@ -43,7 +46,6 @@ function dividir(num1,concatenar){
         return "no se puede dividir por 0"
         }
     return num1/concatenar
-
 }
 
 function porcentaje(){
@@ -102,3 +104,13 @@ function masMenos(){ //±//
     } 
 }
 
+const punto=()=>{
+    if(concatenar==""){
+        concatenar+="0.";
+        document.getElementById("numeroAbajo").textContent=concatenar
+    }
+    if(!concatenar.includes(".")){
+        concatenar+=".";
+        document.getElementById("numeroAbajo").textContent=concatenar
+    }
+}
